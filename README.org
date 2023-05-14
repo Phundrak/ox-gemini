@@ -1,0 +1,20 @@
+#+title: ox-gemini
+
+Forked from Justin Abrahms’ [[https://git.sr.ht/~abrahms/ox-gemini][original =ox-gemini=]].
+
+* =ox-gemini=
+This adds support for exporting org files in gemini format. Many
+things in here were taken from the ascii exporter, from which this one
+derives.
+
+- Read more about gemini here: https://gemini.circumlunar.space/
+- Read more about org-mode here: https://orgmode.org/
+
+* What this fork adds
+Not much, really. For now, this is just a way for me to apply a fix in
+gemini links as described in commit [[https://labs.phundrak.com/phundrak/ox-gemini/commit/94dd2f4a8e5ca50bbfb857395d98da88bf581b6c][94dd2f4]].
+
+TODOs formerly in =ox-gemini.el= have also been moved to issues.
+
+* License
+This software is licensed under GPLv3.

@@ -22,12 +22,6 @@
 (require 'cl-lib)
 (require 'url-util)
 
-;; TODO:
-;; Sublists aren't supported in gemini
-;; There's a trailing space after inline code samples
-;; If you link a file to an absolute path, the links break
-;; bare links don't work (e.g. directly linking https://google.com)
-
 ;;; Code:
 
 (org-export-define-derived-backend 'gemini 'ascii
@@ -62,12 +56,12 @@ CONTENTS is the text of the individual item.
 ITEM is the parsed-org element with all properties."
   (concat "* "
           ;; vv Code from ox-md! vv
-	  (pcase (org-element-property :checkbox item)
-	    (`on "[X] ")
-	    (`trans "[-] ")
-	    (`off "[ ] "))
-	  (let ((tag (org-element-property :tag item)))
-	    (and tag (format "%s :: " (org-export-data tag info))))
+          (pcase (org-element-property :checkbox item)
+            (`on "[X] ")
+            (`trans "[-] ")
+            (`off "[ ] "))
+          (let ((tag (org-element-property :tag item)))
+            (and tag (format "%s :: " (org-export-data tag info))))
           ;; ^^ ^^
           contents))
 
