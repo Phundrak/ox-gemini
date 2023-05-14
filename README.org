@@ -15,6 +15,10 @@ derives.
 * What this fork adds
 Not much, really. For now, this is just a way for me to apply a fix in
 gemini links as described in commit [[https://labs.phundrak.com/phundrak/ox-gemini/commit/94dd2f4a8e5ca50bbfb857395d98da88bf581b6c][94dd2f4]].
+This forks fixes two issues the original =ox-gemini= has:
+- link descriptions include a newline when the orgmode code also does,
+  which breaks things (see commit [[https://labs.phundrak.com/phundrak/ox-gemini/commit/94dd2f4a8e5ca50bbfb857395d98da88bf581b6c][94dd2f4]])
+- inline code carries a trailing whitespace (see commit [[https://labs.phundrak.com/phundrak/ox-gemini/commit/1eadafd8e0f9848bb0119076cab15f0b5b23ed0c][1eadafd8e0]])
 
 TODOs formerly in =ox-gemini.el= have also been moved to issues.
 
