@@ -1,6 +1,8 @@
 #+title: ox-gemini
 
-Forked from Justin Abrahms’ [[https://git.sr.ht/~abrahms/ox-gemini][original =ox-gemini=]].
+#+html: <a href="https://drone.phundrak.com/phundrak/ox-gemini"><img src="https://drone.phundrak.com/api/badges/phundrak/ox-gemini/status.svg" /></a>
+
+Forked from Justin Abrahms’ [[https://git.sr.ht/~abrahms/ox-gemini][original ox-gemini]].
 
 * =ox-gemini=
 This adds support for exporting org files in gemini format. Many
