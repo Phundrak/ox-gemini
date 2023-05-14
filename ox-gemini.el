@@ -139,16 +139,15 @@ contextual information."
                (org-ascii--current-text-width section info)
                info))))
     (org-remove-indentation
-      (if (not (org-string-nw-p links)) contents-str
-        (concat (org-element-normalize-string contents-str) "\n\n" links))
-      ;; Do not apply inner margin if parent headline is low level.
-      (let ((headline (org-export-get-parent-headline section)))
-        (if (or (not headline) (org-export-low-level-p headline info)) 0
-          (plist-get info :ascii-inner-margin))))))
+     (if (not (org-string-nw-p links)) contents-str
+       (concat (org-element-normalize-string contents-str) "\n\n" links))
+     ;; Do not apply inner margin if parent headline is low level.
+     (let ((headline (org-export-get-parent-headline section)))
+       (if (or (not headline) (org-export-low-level-p headline info)) 0
+         (plist-get info :ascii-inner-margin))))))
 
-(defun org-gemini--build-title
-    (element info _text-width &optional _underline _notags toc)
-    "Build a title heading.
+(defun org-gemini--build-title (element info _text-width &optional _underline _notags toc)
+  "Build a title heading.
 
 ELEMENT is an org-element.  TOC is whether to show the table of contents.
 INFO is unimportant."
