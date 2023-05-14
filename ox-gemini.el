@@ -1,12 +1,27 @@
 ;;; ox-gemini.el --- Output gemini formatted documents from org-mode  -*- lexical-binding: t; -*-
 
 ;; Author: Justin Abrahms <justin@abrah.ms>
-;; URL: https://git.sr.ht/~abrahms/ox-gemini
-;; Keywords: lisp gemini
-;; Version: 0
+;; Maintainer: Lucien Cartier-Tilet <lucien@phundrak.com>
+;; URL: https://labs.phundrak.com/phundrak/ox-gemini
+;; Version: 0.2.0
+;; Keywords: lisp org-mode
 ;; Package-Requires: ((emacs "26.1"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
+;; This file is not part of GNU Emacs.
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 ;;
@@ -103,10 +118,11 @@ INFO is a plist."
                        (concat (file-name-sans-extension (org-element-property :path link)) ".gmi")
                      raw-path))
              (desc (org-element-contents link))
-             (anchor (string-replace "\n" " "
-                                     (org-export-data
-                                      (or desc (org-element-property :raw-link link))
-                                      info))))
+             (anchor (replace-regexp-in-string (regexp-quote "\n")
+                                               " "
+                                               (org-export-data
+                                                (or desc (org-element-property :raw-link link))
+                                                info))))
         (format "=> %s %s\n" (url-encode-url path) anchor)))
     links "")
    (when (car links)

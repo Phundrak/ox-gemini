@@ -1,0 +1,75 @@
+---
+kind: pipeline
+type: docker
+name: emacs 26
+
+steps:
+  - name: tests
+    image: silex/emacs:26-alpine
+    commands:
+      - apk add npm make
+      - npm install -g @emacs-eask/cli
+      - make clean
+      - make package
+      - make install
+      - make compile
+      - make checkdoc
+      - make lint
+      - make clean
+
+---
+kind: pipeline
+type: docker
+name: emacs 27
+
+steps:
+  - name: tests
+    image: silex/emacs:27-alpine
+    commands:
+      - apk add npm make
+      - npm install -g @emacs-eask/cli
+      - make clean
+      - make package
+      - make install
+      - make compile
+      - make checkdoc
+      - make lint
+      - make clean
+
+---
+kind: pipeline
+type: docker
+name: emacs 28
+
+steps:
+  - name: tests
+    image: silex/emacs:28-alpine
+    commands:
+      - apk add npm make
+      - npm install -g @emacs-eask/cli
+      - make clean
+      - make package
+      - make install
+      - make compile
+      - make checkdoc
+      - make lint
+      - make clean
+
+---
+kind: pipeline
+type: docker
+name: emacs master
+
+steps:
+  - name: tests
+    image: silex/emacs:master-alpine
+    commands:
+      - apk add npm make
+      - npm install -g @emacs-eask/cli
+      - make clean
+      - make package
+      - make install
+      - make compile
+      - make checkdoc
+      - make lint
+      - make clean

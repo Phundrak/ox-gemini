@@ -16,5 +16,8 @@ gemini links as described in commit [[https://labs.phundrak.com/phundrak/ox-gemi
 
 TODOs formerly in =ox-gemini.el= have also been moved to issues.
 
+** Eask
+This project is managed with [[https://github.com/emacs-eask/cli][Eask]].
+
 * License
 This software is licensed under GPLv3.
