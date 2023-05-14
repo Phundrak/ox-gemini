@@ -91,7 +91,9 @@ ITEM is the parsed-org element with all properties."
 INPUT is either a \\='src-block\\=' or \\='example-block\\='
 element.  INFO is a plist."
   ;; there's a bug here where there's a trailing space in the ``
-  (format "`%s`" (org-export-format-code-default input info)))
+  (format "`%s`" (replace-regexp-in-string (rx (* whitespace) eot)
+                                           ""
+                                           (org-export-format-code-default input info))))
 
 (defun org-gemini-code-block (src-block _contents info)
   "SRC-BLOCK is a codeblock.  INFO is a plist."
