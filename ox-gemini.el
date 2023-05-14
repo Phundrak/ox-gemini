@@ -41,7 +41,7 @@
 
 (org-export-define-derived-backend 'gemini 'ascii
   :menu-entry
-  '(?g "Export to Gemini"
+  '(?G "Export to Gemini"
        ((?b "To buffer"
             (lambda (a s v b)
               (org-gemini-export-to-buffer a s v b nil)))
